@@ -1,0 +1,21 @@
+<launch>
+  <arg name="namespace" default="mltdma"/>
+
+  <group ns="$(arg namespace)">
+
+    <group ns="sensors">
+      <node pkg="halo_radar" type="halo_radar" name="halo_radar">
+        <rosparam param="hostIPs">["192.168.10.117", ]</rosparam>
+        <param name="frameId" value="$(arg namespace)/radar"/>
+      </node>
+    </group>
+
+    <node pkg="udp_bridge" type="udp_bridge_node" name="udp_bridge">
+    </node>
+
+  </group>
+
+</launch>
+
+
+
