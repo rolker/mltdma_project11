@@ -5,7 +5,6 @@
 
     <group ns="sensors">
       <node pkg="halo_radar" type="halo_radar" name="halo_radar">
-        <rosparam param="hostIPs">["192.168.10.117", ]</rosparam>
         <param name="frameId" value="$(arg namespace)/radar"/>
       </node>
     </group>
