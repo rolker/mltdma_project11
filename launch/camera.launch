@@ -1,0 +1,19 @@
+<launch>
+  <arg name="name"/>
+  
+  <node pkg="video_stream_opencv" type="video_stream" name="$(arg name)" ns="$(arg name)"> 
+    <param name="video_stream_provider" type="string" value="rtsp://admin:123456@192.168.100.120:554/h264_stream" />
+    <param name="set_camera_fps" type="double" value="30" />
+    <param name="buffer_queue_size" type="int" value="100" />
+    <param name="fps" type="double" value="30" />
+    <param name="frame_id" type="string" value="$(arg name)" />
+    <param name="camera_info_url" type="string" value="" />
+    <param name="flip_horizontal" type="bool" value="false" />
+    <param name="flip_vertical" type="bool" value="false" />
+    <param name="width" type="int" value="0" />
+    <param name="height" type="int" value="0" />
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="thumbnail" ns="$(arg name)" args="standalone image_proc/resize image:=image_raw _scale_width:=0.3 _scale_height:=0.3"/>
+
+</launch>

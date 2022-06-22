@@ -7,6 +7,10 @@
       <node pkg="halo_radar" type="halo_radar" name="halo_radar">
         <param name="frameId" value="$(arg namespace)/radar"/>
       </node>
+
+      <include file="$(find mltdma_project11)/launch/camera.launch">
+        <arg name="name" value="front"/>
+      </include>
     </group>
 
     <node pkg="udp_bridge" type="udp_bridge_node" name="udp_bridge">
