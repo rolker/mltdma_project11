@@ -2,6 +2,7 @@
   <arg name="namespace" default="mltdma"/>
   <arg name="ais_input" default="/dev/ttyACM0"/>
   <arg name="ais_input_speed" default="115200" />
+  <arg name="ais_log_directory" default="/home/field/ais_logs/"/>
   <arg name="wit_input" default="/dev/ttyUSB0"/>
   <arg name="wit_input_speed" default="115200" />
 
@@ -21,6 +22,7 @@
         <param name="input" value="$(arg ais_input)"/>
         <param name="input_speed" value="$(arg ais_input_speed)" />
         <param name="frame_id" value="$(arg namespace)/ais"/>
+        <param name="log_directory" value="$(arg ais_log_directory)"/>
       </node>
 
       <node pkg="witmotion" type="witmotion_node.py" name="witmotion">
