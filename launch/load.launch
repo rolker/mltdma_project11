@@ -1,0 +1,6 @@
+<launch>
+  <arg name="namespace" default="mltdma"/>
+  <arg name="model" default="$(find mltdma_project11)/urdf/mltdma_mesh.xacro"/>
+
+  <param name="$(arg namespace)/robot_description" command="$(find xacro)/xacro $(arg model)"/>
+</launch>

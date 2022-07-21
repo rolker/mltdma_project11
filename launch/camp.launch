@@ -1,0 +1,14 @@
+<launch>
+  <arg name="namespace" default="operator"/>
+  <arg name="robotNamespace" default="mltdma"/>
+  <arg name="backgroundChart" default="$(find camp)/workspace/13283/13283_2.KAP"/>
+
+  <rosparam command="load" file="$(find mltdma_project11)/config/mltdma_operator.yaml" ns="$(arg namespace)"/>
+
+  <node pkg="camp" type="CCOMAutonomousMissionPlanner" name="camp"  args="$(find camp)/workspace/ $(arg backgroundChart)" ns="$(arg namespace)">
+    <param name="robotNamespace" value="$(arg robotNamespace)"/>
+  </node>
+
+</launch>
+
+

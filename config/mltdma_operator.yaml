@@ -1,0 +1,11 @@
+udp_bridge/remotes/robot/name: mltdma
+
+project11/platforms/mltdma:
+  robot_description: mltdma/robot_description
+  width: 1.0
+  length: 1.0
+  nav_sources:
+    witmotion:
+      position_topic: /mltdma/sensors/witmotion/position
+      orientation_topic: /mltdma/sensors/witmotion/orientation
+      velocity_topic: /mltdma/sensors/witmotion/velocity

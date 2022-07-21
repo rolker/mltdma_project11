@@ -1,0 +1,3 @@
+mru_transform/sensors:
+ - name: witmotion
+   topics: { position: 'sensors/witmotion/sync/position', orientation: 'sensors/witmotion/sync/orientation', velocity: 'sensors/witmotion/sync/velocity'}
