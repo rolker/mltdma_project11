@@ -36,19 +36,20 @@
     <node pkg="udp_bridge" type="udp_bridge_node" name="udp_bridge">
     </node>
 
-    <include file="$(find mltdma_project11)/launch/tf.launch">
-      <arg name="namespace" value="$(arg namespace)"/>
-    </include>
-
-    <include file="$(find mltdma_project11)/launch/load.launch">
-      <arg name="namespace" value="$(arg namespace)"/>
-    </include>
-
-    <include file="$(find mltdma_project11)/launch/publish_state.launch">
-      <arg name="namespace" value="$(arg namespace)"/>
-    </include>
 
   </group>
+  
+  <include file="$(find mltdma_project11)/launch/tf.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
+  <include file="$(find mltdma_project11)/launch/load.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
+  <include file="$(find mltdma_project11)/launch/publish_state.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
 
 </launch>
 
