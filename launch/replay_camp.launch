@@ -3,7 +3,7 @@
   <arg name="robotNamespace" default="mltdma"/>
   <arg name="backgroundChart" default="$(find camp)/workspace/13283/13283_2.KAP"/>
 
-  <node pkg="udp_bridge" type="udp_bridge_node" name="udp_bridge" ns="$(arg namespace)"/>
+  <param name="/use_sim_time" type="bool" value="true"/>
 
   <include file="$(find mltdma_project11)/launch/camp.launch">
     <arg name="namespace" value="$(arg namespace)"/>
@@ -14,9 +14,4 @@
   <include file="$(find mltdma_project11)/launch/load.launch">
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
-  
-  <include file="$(find mltdma_project11)/launch/publish_state.launch">
-    <arg name="namespace" value="$(arg namespace)"/>
-  </include>
-
 </launch>
