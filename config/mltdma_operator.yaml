@@ -1,5 +1,3 @@
-udp_bridge/remotes/robot/name: mltdma
-
 project11/platforms/mltdma:
   robot_description: mltdma/robot_description
   width: 1.0
