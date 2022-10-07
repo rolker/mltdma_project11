@@ -12,11 +12,11 @@
   </include>
 
   <include file="$(find mltdma_project11)/launch/load.launch">
-    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="namespace" value="$(arg robotNamespace)"/>
   </include>
   
   <include file="$(find mltdma_project11)/launch/publish_state.launch">
-    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="namespace" value="$(arg robotNamespace)"/>
   </include>
 
 </launch>
