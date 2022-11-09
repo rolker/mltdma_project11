@@ -1,0 +1,20 @@
+<launch>
+    <node pkg="topic_tools" type="throttle" name="image_throttle" args="messages /mltdma/sensors/front/image_raw/compressed 1.0 /mltdma/sensors/front/throttle/image_raw/compressed"  />
+    <node pkg="rosbag" type="record" name="controller_test_logger" args="-j -o $(find mltdma_project11)/logs/mltdma --split --duration=10m
+          /mltdma/sensors/ais/project11/ais/contact
+          /mltdma/sensors/front/throttle/image_raw/compressed
+          /mltdma/sensors/front/camera_info
+          /mltdma/sensors/radar/HaloA/change_state
+          /mltdma/sensors/radar/HaloA/data
+          /mltdma/sensors/radar/HaloA/state
+          /mltdma/sensors/radar/HaloB/change_state
+          /mltdma/sensors/radar/HaloB/data
+          /mltdma/sensors/radar/HaloB/state
+          /mltdma/sensors/witmotion/orientation
+          /mltdma/sensors/witmotion/position
+          /mltdma/sensors/witmotion/time_reference
+          /mltdma/sensors/witmotion/velocity
+          /tf
+          /tf_static
+    " />
+</launch>
